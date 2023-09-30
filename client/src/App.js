@@ -1,23 +1,15 @@
-import "./styles/App.css";
+import Head from "./components/Head";
+import icon_statistics from "./content/statistics.svg";
 
 const App = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const head_title = "Client-server application for long-term data analysis";
+
+  const head_image = {
+    alt: "statistics",
+    src: icon_statistics,
+  };
+
+  return <Head title={head_title} image={head_image} />;
 };
 
 export default App;

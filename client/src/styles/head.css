@@ -1,0 +1,19 @@
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #e4ffd6;
+  font-size: 20px;
+  padding: 20px;
+}
+
+.head__title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.head__img {
+  height: 30px;
+  width: 30px;
+}
