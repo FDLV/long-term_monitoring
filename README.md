@@ -1,0 +1,1 @@
+# Client-server application for long-term data analysis based on the PERN stack 
