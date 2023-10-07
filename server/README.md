@@ -1,14 +1,16 @@
-# Server
+# Server side
 
 # Is needed to add config.js
 
-export default {
-  "rapidApiKey": "",
-  "db": {
-    "user": "",
-    "password": "",
-    "host": "",
-    "port": ,
-    "database": ""
-  }
+const config = {
+"rapidApiKey": "",
+"db": {
+"user": "",
+"password": "",
+"host": "",
+"port": ,
+"database": ""
 }
+}
+
+export default config;
