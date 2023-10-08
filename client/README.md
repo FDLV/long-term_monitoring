@@ -3,7 +3,7 @@
 ## Is needed to add config.js
 
 const config = {
-  address: "",
+address: "",
 };
-  
+
 export default config;

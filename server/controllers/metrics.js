@@ -4,8 +4,8 @@ export const create_metrics = async (req, res) => {
   try {
     const response = await create_metrics_service();
 
-    if (response === undefined) res.status(400).json("Ошибка выполнения запроса");
-    else res.status(200).json(response.rows);
+    if (response === undefined) return res.status(400).json("Ошибка выполнения запроса");
+    else return res.status(200).send(response);
   } catch (error) {
     console.log(error);
   }

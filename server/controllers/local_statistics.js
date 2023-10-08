@@ -29,15 +29,15 @@ export const set_local_statistics = async (req, res) => {
       return res.status(400).json("Отсутствует параметр measurement_date в body");
     }
 
-    const today_date = new Date();
-    const today_date_fix = today_date.setHours(0, 0, 0, 0);
+    const yesterday_date = new Date();
+    const yesterday_date_fix = yesterday_date.setHours(-24, 0, 0, 0);
     const measurement_date_fix = new Date(measurement_date).setHours(0, 0, 0, 0);
 
-    if (today_date_fix !== measurement_date_fix) {
-      return res.status(400).json("Параметр measurement_date не является сегодняшней датой");
+    if (yesterday_date_fix !== measurement_date_fix) {
+      return res.status(400).json("Параметр measurement_date не является вчерашней датой");
     }
 
-    const response_check_date = await get_local_statistics_by_date_service(today_date);
+    const response_check_date = await get_local_statistics_by_date_service(yesterday_date);
 
     let response_create = null;
 

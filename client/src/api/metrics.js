@@ -1,19 +1,16 @@
-// с сервера
-// export const get_carbon_dioxide_concentration = async () => {
-//   const url = "https://daily-atmosphere-carbon-dioxide-concentration.p.rapidapi.com/api/co2-api";
-//   const options = {
-//     method: "GET",
-//     headers: {
-//       "X-RapidAPI-Key": "",
-//       "X-RapidAPI-Host": "daily-atmosphere-carbon-dioxide-concentration.p.rapidapi.com",
-//     },
-//   };
+import config from "../config.js";
 
-//   try {
-//     const response = await fetch(url, options);
-//     const result = await response.text();
-//     console.log(result);
-//   } catch (error) {
-//     console.error(error);
-//   }
-// };
+// Получить данные
+export const set_metrics = async () => {
+  const url = `http://${config.address}/metrics`;
+  const params = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    },
+  };
+
+  const response = await fetch(url, params);
+  if (response.status !== 200) return;
+  return response.json();
+};
