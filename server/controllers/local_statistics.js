@@ -29,6 +29,8 @@ export const set_local_statistics = async (req, res) => {
       return res.status(400).json("Отсутствует параметр measurement_date в body");
     }
 
+    console.log(measurement_date);
+
     const yesterday_date = new Date();
     const yesterday_date_fix = yesterday_date.setHours(-24, 0, 0, 0);
     const measurement_date_fix = new Date(measurement_date).setHours(0, 0, 0, 0);
